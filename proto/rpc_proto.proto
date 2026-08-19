@@ -1,0 +1,27 @@
+syntax = "proto3";
+package minirpc;
+
+message DemoReq {
+    uint64 serialid = 1;
+    string servername = 2;
+    string funcname = 3;
+    string param = 4;
+}
+message DemoResp {
+    uint64 serialid = 1;
+    int32 errnum = 2;
+    string errinfo = 3;
+    string result = 4;
+}
+
+message IPElem {
+    string ip = 1;
+    uint32 port = 2;
+    uint32 weight = 3;
+}
+
+message RegisterMessage {
+    string cmd = 1;
+    uint64 id = 2;
+    repeated IPElem IPList = 3;
+}
